@@ -47,34 +47,3 @@ ListNode *addTwoNumbers(ListNode *l1, ListNode *l2)
 	t = head.next;
 	return t;
 }
-
-int main()
-{
-	ListNode head(0), *l1, *l2;
-
-	l1 = &head;
-	l1->next = new ListNode(2);
-	l1 = l1->next;
-	l1->next = new ListNode(4);
-	l1 = l1->next;
-	l1->next = new ListNode(3);
-	l1 = l1->next;
-	l1 = head.next;
-	head.next = NULL;
-	l2 = &head;
-	l2->next = new ListNode(5);
-	l2 = l2->next;
-	l2->next = new ListNode(6);
-	l2 = l2->next;
-	l2->next = new ListNode(4);
-	l2 = l2->next;
-	l2 = head.next;
-	head.next = NULL;
-	l1 = addTwoNumbers(l1, l2);
-	while (l1) {
-		cout << ' ' << l1->val;
-		l1 = l1->next;
-	}
-	cout << '\n';
-	return 0;
-}
