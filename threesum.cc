@@ -27,9 +27,9 @@ vector<vector<int> > threeSum(vector<int> &num)
 				tuple[1] = num[lo];
 				tuple[2] = num[hi];
 				ret.push_back(tuple);
-				while (lo < hi && num[lo] == tuple[1])
+				while (lo + 1 < hi && num[lo + 1] == num[lo])
 					lo++;
-				while (lo < hi && num[hi] == tuple[2])
+				while (hi - 1 > lo && num[hi - 1] == num[hi])
 					hi--;
 			}
 		}
@@ -37,19 +37,4 @@ vector<vector<int> > threeSum(vector<int> &num)
 			i++;
 	}
 	return ret;
-}
-
-int main()
-{
-	vector<int> vec{0};// -4,-2,1,-5,-4,-4,4,-2,0,4,0,-2,3,1,-5,0};
-	vector<vector<int> > ret;
-	size_t i, j, n;
-
-	cout << sizeof(size_t) << endl;
-	ret = threeSum(vec);
-	n = ret.size();
-	for (i = 0; i < n; i++, cout << endl)
-		for (j = 0; j < ret[i].size(); j++)
-			cout << ret[i][j] << ' ';
-	return 0;
 }
